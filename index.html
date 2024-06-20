@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- <link rel="stylesheet" href="output.css"> -->
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+       
+        <nav class="bg-gray-500">
+            <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+              <div class="relative flex h-16 items-center justify-between">
+                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                  <!-- Mobile menu button-->
+                  <button type="block" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false" id="btn">
+                    <span class="absolute -inset-0.5"></span>
+                    <span class="sr-only">Open main menu</span>
+                    <!--
+                      Icon when menu is closed.
+          
+                      Menu open: "hidden", Menu closed: "block"
+                    -->
+                    <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"   id="open">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    <!--
+                      Icon when menu is open.
+          
+                      Menu open: "block", Menu closed: "hidden"
+                    -->
+                    <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"  id="close">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+                <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                  <div class="flex flex-shrink-0 items-center">
+                    <img class="h-8 w-auto" src="./image/logo.png" alt="Your Company">
+                  </div>
+                  <div class="hidden sm:ml-6 sm:block">
+                    <div class="flex space-x-4">
+                      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                      <a href="#" class="rounded-md bg-gray-700 px-3 py-2 text-sm font-medium text-white" aria-current="page">Home</a>
+                      <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Menu</a>
+                      <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Services</a>
+                      <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About Us</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                  <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    <span class="absolute -inset-1.5"></span>
+                    <span class="sr-only">View notifications</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                    </svg>
+                  </button>
+          
+                  <!-- Profile dropdown -->
+             <div class="relative ml-3">
+                    <div>
+                      <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                        <span class="absolute -inset-1.5"></span>
+                        <span class="sr-only">Open user menu</span>
+                        <img class="h-8 w-8 rounded-full" src="./image/myPic.jpeg" alt="">
+                      </button>
+                    </div>
+                  </div> 
+                </div>
+              </div>
+            </div>
+          
+            <!-- Mobile menu, show/hide based on menu state. -->
+            <div class="sm:hidden" id="mobile-menu">
+              <div class="space-y-1 px-2 pb-3 pt-2">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a href="#" class="block rounded-md bg-gray-700 px-3 py-2 text-base font-medium text-white" aria-current="page">Home</a>
+                <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Menu</a>
+                <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Services</a>
+                <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About Us</a>
+              </div>
+            </div>
+          </nav>
+          
+        <div class="sectionTwo  bg-gray-50 grid sm:grid-cols-3 gap-5 mx-20 shadow-xl rounded-lg px-6 absolute bottom-8">
+            <div class="flex flex-row gap-2 place-items-center ">
+                <img src="/image/section2/fast-delivery 1.png" alt="">
+                <div>
+                    <div class="font-bold text-gray-900 text-lg font-serif text-center">Fast Delivery</div>
+                    <div class="text-sm text-gray-700">Promise to deliver within 30mins.</div>
+                </div>
+            </div>
+            <div class="flex flex-row gap-2 place-items-center">
+                <img src="/image/section2/fresh (1) 1.png" alt="" class="">
+                <div>
+                    <div class="font-bold text-gray-900 text-lg font-serif text-center">Fresh Food</div>
+                    <div class="text-sm text-gray-700 text-center">Your food will be deliver 100 percent fresh to your home</div>
+                </div>
+            </div>
+            <div class="flex flex-row gap-2 place-items-center">
+                <img src="/image/section2/box 1.png" alt="">
+                <div>
+                    <div class="font-bold text-gray-900 text-lg font-serif text-center">Free Delivery</div>
+                    <div class="text-sm text-gray-700 text-center">your food delivery is absolutely free. no cost for order</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sectionThree mx-20 mt-36"> 
+            <div class="flex justify-between mb-6 ">
+                <div class="capitalize text-2xl font-bold font-serif">our <span class="text-red-600 "> best delivered</span>  <br>nigeria dish </div>
+                <div class="text-sm text-gray-700 capitalize">it is not just about bringing you good food, <br>from restaurants, we deliver you experince</div>
+            </div>
+             <div class="grid md:grid-cols-3 place-items-center">
+                <div class="grid place-items-center gap-2">
+                    <img src="/image/section3/20230716194412_[fpdl 1.png" alt="" class=" border-4 rounded-full border-red-600 border-dashed p-3 w-52">
+                    <div class="capitalize font-bold font-serif">nigeria vegetable</div>
+                    <div class="flex flex-row gap-1 text-red-600 capitalize font-serif text-sm font-semibold">
+                        <div class="">order now</div>
+                        <svg class="w-4" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+                          </svg>
+                    </div>   
+                </div>
+
+                <div class="grid place-items-center gap-2">
+                    <img src="/image/section3/20230717184503_[fpdl 1.png" alt="" class="border-4 rounded-full border-red-600 border-dashed p-3 w-52">
+                    <div class="capitalize font-bold font-serif">nigeria vegetable</div>
+                    <div class="flex flex-row gap-1 text-red-600 capitalize font-serif text-sm font-semibold">
+                        <div class="">order now</div>
+                        <svg class="w-4" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+                          </svg>
+                    </div>   
+                </div>
+
+                <div class="grid place-items-center gap-2">
+                    <img src="/image/section3/vertical-shot-traditional-indian-paneer-butter-masala-cheese-cottage-curry-black-surface.png" alt="" class="border-4 rounded-full border-red-600 border-dashed p-3 w-52">
+                    <div class="capitalize font-bold font-serif">nigeria vegetable</div> 
+                    <div class="flex flex-row gap-1 text-red-600 capitalize font-serif text-sm font-semibold">
+                        <div class="">order now</div>
+                        <svg class="w-4" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+                          </svg>
+                    </div>   
+                </div>
+             </div>
+        </div>
+
+        <div class="SectionFour mx-20 mt-20 mb-20  ">
+           <div class="flex flex-row justify-between ">
+             <div class="flex flex-col gap-2">
+                <div class="capitalize text-2xl font-bold font-serif">our <span class="text-red-600">regular </span> menu</div>
+                <div class="text-sm text-gray-700 capitalize">there are rugular menu. <br>you can order anything you like</div>
+             </div>
+                <button class="bg-red-600 rounded p-2 text-white font-bold font-serif capitalize text-sm text-center hover:bg-white hover:text-red-600">see all</button>
+           </div>
+        </div>
+
+        <div class="sectionFive mx-20 px-5 grid md:grid-cols-3 gap-20 place-items-center mb-10">
+            <div class="relative">
+                <div class="card flex flex-col gap-5 shadow-lg rounded bg-pink-200 w-52 place-items-center pt-20 pb-5">
+                   <div class="font-bold font-serif flex place-items-center flex-col">
+                  <div class="text-red-600">Indian Dessert</div>
+                  <div>Mosala Dosa</div>
+                   </div>
+
+                   <div class="flex flex-row gap-1">
+                 <div class="flex flex-row gap-1">
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                 </div>
+                 <span class="text-gray-500 font-serif font-bold">(120)</span>
+                   </div>
+
+                   <div class="flex flex-row gap-7">
+                 <div class="text-lg font-sans font-bold">£120</div>
+                 <button class="bg-red-600 rounded px-2 text-white font-serif font-semibold hover:bg-red-400">Buy Now</button>
+                   </div>
+                </div>
+
+                <div class="absolute -top-10 right-14">
+            <img src="/image/section4/20230720134636_[fpdl.png" alt="" class="border-4 rounded-full border-red-600 border-dashed p-2 w-24">
+                </div>
+            </div>
+
+            <div class="relative">
+                <div class="card flex flex-col gap-5 shadow-lg rounded bg-pink-200 w-52 place-items-center pt-20 pb-5">
+                   <div class="font-bold font-serif flex place-items-center flex-col">
+                  <div class="text-red-600">Indian Dessert</div>
+                  <div>Mosala Dosa</div>
+                   </div>
+
+                   <div class="flex flex-row gap-1">
+                 <div class="flex flex-row gap-1">
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                 </div>
+                 <span class="text-gray-500 font-serif font-bold">(50)</span>
+                   </div>
+
+                   <div class="flex flex-row gap-7">
+                 <div class="text-lg font-sans font-bold">£100</div>
+                 <button class="bg-red-600 rounded px-2 text-white font-serif font-semibold hover:bg-red-400">Buy Now</button>
+                   </div>
+                </div>
+
+                <div class="absolute -top-10 right-14">
+            <img src="/image/section4/20230720134751_[fpdl.png" alt="" class="border-4 rounded-full border-red-600 border-dashed p-2 w-24">
+                </div>
+            </div> 
+
+            <div class="relative">
+                <div class="card flex flex-col gap-5 shadow-lg rounded bg-pink-200 w-52 place-items-center pt-20 pb-5">
+                   <div class="font-bold font-serif flex place-items-center flex-col">
+                  <div class="text-red-600">Indian Dessert</div>
+                  <div>Mosala Dosa</div>
+                   </div>
+
+                   <div class="flex flex-row gap-1">
+                 <div class="flex flex-row gap-1">
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                 </div>
+                 <span class="text-gray-500 font-serif font-bold">(80)</span>
+                   </div>
+
+                   <div class="flex flex-row gap-7">
+                 <div class="text-lg font-sans font-bold">£160</div>
+                 <button class="bg-red-600 rounded px-2 text-white font-serif font-semibold hover:bg-red-400">Buy Now</button>
+                   </div>
+                </div>
+
+                <div class="absolute -top-10 right-14">
+            <img src="/image/section4/20230720135940_[fpdl.png" alt="" class="border-4 rounded-full border-red-600 border-dashed p-2 w-24">
+                </div>
+            </div> 
+
+            <div class="relative">
+                <div class="card flex flex-col gap-5 shadow-lg rounded bg-pink-200 w-52 place-items-center pt-20 pb-5">
+                   <div class="font-bold font-serif flex place-items-center flex-col">
+                  <div class="text-red-600">Indian Dessert</div>
+                  <div>Mosala Dosa</div>
+                   </div>
+
+                   <div class="flex flex-row gap-1">
+                 <div class="flex flex-row gap-1">
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                 </div>
+                 <span class="text-gray-500 font-serif font-bold">(100)</span>
+                   </div>
+
+                   <div class="flex flex-row gap-7">
+                 <div class="text-lg font-sans font-bold">£160</div>
+                 <button class="bg-red-600 rounded px-2 text-white font-serif font-semibold hover:bg-red-400">Buy Now</button>
+                   </div>
+                </div>
+
+                <div class="absolute -top-10 right-14">
+            <img src="/image/section4/20230720140127_[fpdl.png" alt="" class="border-4 rounded-full border-red-600 border-dashed p-2 w-24">
+                </div>
+            </div> 
+
+            <div class="relative">
+                <div class="card flex flex-col gap-5 shadow-lg rounded bg-pink-200 w-52 place-items-center pt-20 pb-5">
+                   <div class="font-bold font-serif flex place-items-center flex-col">
+                  <div class="text-red-600">Indian Dessert</div>
+                  <div>Mosala Dosa</div>
+                   </div>
+
+                   <div class="flex flex-row gap-1">
+                 <div class="flex flex-row gap-1">
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                 </div>
+                 <span class="text-gray-500 font-serif font-bold">(190)</span>
+                   </div>
+
+                   <div class="flex flex-row gap-7">
+                 <div class="text-lg font-sans font-bold">£220</div>
+                 <button class="bg-red-600 rounded px-2 text-white font-serif font-semibold hover:bg-red-400">Buy Now</button>
+                   </div>
+                </div>
+
+                <div class="absolute -top-10 right-14">
+            <img src="/image/section4/20230721142523_[fpdl 1.png" alt="" class="border-4 rounded-full border-red-600 border-dashed p-2 w-24">
+                </div>
+            </div> 
+
+            <div class="relative">
+                <div class="card flex flex-col gap-5 shadow-lg rounded bg-pink-200 w-52 place-items-center pt-20 pb-5">
+                   <div class="font-bold font-serif flex place-items-center flex-col">
+                  <div class="text-red-600">Indian Dessert</div>
+                  <div>Mosala Dosa</div>
+                   </div>
+
+                   <div class="flex flex-row gap-1">
+                 <div class="flex flex-row gap-1">
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                    <div class="w-5 text-yellow-400">
+                        <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path>
+                          </svg>
+                    </div>
+                 </div>
+                 <span class="text-gray-500 font-serif font-bold">(150)</span>
+                   </div>
+
+                   <div class="flex flex-row gap-7">
+                 <div class="text-lg font-sans font-bold">£220</div>
+                 <button class="bg-red-600 rounded px-2 text-white font-serif font-semibold hover:bg-red-400">Buy Now</button>
+                   </div>
+                </div>
+
+                <div class="absolute -top-10 right-14">
+            <img src="/image/section4/DAL-BAATI-CHURMA.png" alt="" class="border-4 rounded-full border-red-600 border-dashed p-2 w-24">
+                </div>
+            </div> 
+        </div>
+
+    <footer class="bg-pink-200 ">
+        <div class="mx-20 grid sm:grid-cols-4 place-items-center py-5">
+            <div class="flex flex-col gap-2 place-items-center">
+                <div class="text-red-600 capitalize font-serif font-bold text-lg">food <span class="text-black">dash</span></div>
+                <div class="text-sm text-gray-700">food dash @ 2024 all right reserved</div>
+                <div class="text-sm text-gray-700">by Abdulrahman</div>
+                <div class="text-red-600 capitalize font-serif font-bold text-lg">follow us on</div>
+                <div class="flex flex-row gap-2">
+                    <div>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                       <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                     </svg>
+                    </div>
+                    <div>
+                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                       </svg>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <rect height="20" rx="5" ry="5" width="20" x="2" y="2" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                        </svg>
+                    </div>
+                    <div>
+                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                         <rect height="12" width="4" x="2" y="9" />
+                         <circle cx="4" cy="4" r="2" />
+                        </svg>
+                    </div>
+
+                </div>
+            </div>
+            <div class="flex flex-col gap-2 place-items-center">
+                <div class="text-red-600 capitalize font-serif font-bold text-lg">menu</div>
+                <div class="text-sm text-gray-700">home</div>
+                <div class="text-sm text-gray-700">offers</div>
+                <div class="text-sm text-gray-700">service</div>
+                <div class="text-sm text-gray-700">about us</div>
+            </div>
+            <div class="flex flex-col gap-2 place-items-center">
+                <div class="text-red-600 capitalize font-serif font-bold text-lg">information</div>
+                <div class="text-sm text-gray-700">menu</div>
+                <div class="text-sm text-gray-700">quality</div>
+                <div class="text-sm text-gray-700">make a choice</div>
+                <div class="text-sm text-gray-700">fast delivery</div>
+            </div>
+            <div class="flex flex-col gap-2 place-items-center">
+                <div class="text-red-600 capitalize font-serif font-bold text-lg">contact</div>
+                <div class="text-sm text-gray-700">+447780517153</div>
+                <div class="text-sm text-gray-700">explore</div>
+                <div class="text-sm text-gray-700">rivuxg1@gmail.com</div>
+                <address class="text-sm text-gray-700">pa1 2bs, paisley high street,scotland</address>
+            </div>
+        </div> 
+    </footer>
+    </div>
+    <script>
+         let Btn = document.getElementById("btn")
+         Btn.addEventListener("click", ()=>{
+             let openbtn  = document.getElementById("open")
+             let closebtn = document.getElementById("close")
+             let menu     = document.getElementById("mobile-menu")
+             let add      = document.getElementById("section2")
+             openbtn.classList.toggle("hidden")
+             menu.classList.toggle("hidden")
+             closebtn.classList.toggle("hidden")
+             
+
+        })
+
+    </script>
+</body>
+</html>
